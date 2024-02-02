@@ -16,10 +16,12 @@ async function errorHandling(context) {
 }
 
 async function handleRequest({ next, request }) {
-  
-  const BASIC_USER = 'admin';
-  const BASIC_PASS = 'password';
 
+  const BASIC_USER = request.env.BASIC_AUTH_USER;
+  const BASIC_PASS = request.env.BASIC_AUTH_PASSWORD;
+
+  console.log(request);
+  
   // The "Authorization" header is sent when authenticated.
   if (request.headers.has("Authorization")) {
     const Authorization = request.headers.get("Authorization");
