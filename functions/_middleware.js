@@ -7,6 +7,9 @@
  * first colon in a user-pass string separates user and password.
  */
 
+const BASIC_USER = "admin";
+const BASIC_PASS = "password";
+
 async function errorHandling(context) {
   try {
     return await context.next();
@@ -17,11 +20,9 @@ async function errorHandling(context) {
 
 async function handleRequest({ next, request }) {
 
-  const BASIC_USER = request.env.BASIC_AUTH_USER;
-  const BASIC_PASS = request.env.BASIC_AUTH_PASSWORD;
-
   console.log(request);
-  
+  console.log(request.env);
+
   // The "Authorization" header is sent when authenticated.
   if (request.headers.has("Authorization")) {
     const Authorization = request.headers.get("Authorization");
