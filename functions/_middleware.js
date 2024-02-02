@@ -16,16 +16,17 @@ async function errorHandling(context) {
   }
 }
 
-async function handleRequest(next, request) {
+async function handleRequest(context) {
   const BASIC_USER = "admin";
   const BASIC_PASS = "password";
 
-  console.log(next);
-  console.log(request);
+  console.log(context);
+
+  console.log(context.env);
 
   // The "Authorization" header is sent when authenticated.
-  if (request.headers.has("Authorization")) {
-    const Authorization = request.headers.get("Authorization");
+  if (context.request.headers.has("Authorization")) {
+    const Authorization = context.request.headers.get("Authorization");
     // Throws exception when authorization fails.
 
     const [scheme, encoded] = Authorization.split(" ");
@@ -67,7 +68,7 @@ async function handleRequest(next, request) {
     }
 
     // Only returns this response when no exception is thrown.
-    return await next();
+    return await context.next();
   }
 
   // Not authenticated.
