@@ -11,8 +11,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "kemuri": "github:wate/kemuri#develop",
-    "wrangler": "^3.26.0"
+    "kemuri": "github:wate/kemuri#develop"
   },
   "dependencies": {
     "@fullcalendar/bootstrap": "^6.1.10",
