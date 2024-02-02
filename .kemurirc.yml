@@ -1,0 +1,244 @@
+---
+## ---------------
+## ビルド機能の有効化
+## ---------------
+enable:
+  - js
+  - css
+  - html
+  - copy
+## ---------------
+## サーバーの設定
+## ---------------
+# server:
+#   baseDir: public
+#   port: 3000
+#   watch: true
+#   proxy: null
+#   ## proxyが設定されている場合はbaseDirの設定が適用されます
+#   watchFiles: []
+#   open: true
+#   browser: default
+#   notify: false
+## ---------------
+## 共通設定項目
+## ---------------
+# srcDir: src
+# outputDir: public
+# assetDir: assets
+# ignore:
+#   filePrefix: null
+#   fileSuffix: null
+#   fileNames: []
+#   dirPrefix: null
+#   dirSuffix: null
+#   dirNames: []
+# beautify: false
+# beautifyOption: {}
+## ---------------
+## HTMLビルド機能の設定
+## ---------------
+# html:
+#   srcDir: "{{ srcDir | default('src') }}"
+#   outputDir: "{{ outputDir | default('public') }}"
+#   exts:
+#     - njk
+#     - twig
+#   moduleExts: []
+#   ignore:
+#     filePrefix: null
+#     fileSuffix: null
+#     fileNames: []
+#     dirPrefix: null
+#     dirSuffix: null
+#     dirNames: []
+#   compileOption: {}
+#   beautify: true
+#   beautifyOption: {}
+#   varFileName: vars.yml
+#   siteUrl: 'http://localhost:3000/'
+#   generateSiteMap: true
+#   sitemapTemplate: |
+#     <?xml version="1.0" encoding="UTF-8"?>
+#     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+#       {% for page in pages %}
+#       <url>
+#         <loc>{{ page.url }}</loc>
+#         <lastmod>{{ page_lastmod | default(page.lastmod) }}</lastmod>
+#         {% if page_changefreq is defined %}
+#         <changefreq>{{ page_changefreq }}</changefreq>
+#         {% endif %}
+#         {% if page_priority is defined %}
+#         <priority>{{ page_priority }}</priority>
+#         {% endif %}
+#       </url>
+#       {% endfor %}
+#     </urlset>
+#   generatePageList: true
+## ---------------
+## CSSビルド機能の設定
+## ---------------
+# css:
+#   srcDir: "{{ srcDir | default('src') }}"
+#   outputDir: "{{ outputDir | default('public') }}/{{ assetDir + '/' if assetDir else '' }}css"
+#   exts:
+#     - scss
+#     - sass
+#     - css
+#   moduleExts: []
+#   ignore:
+#     filePrefix: _
+#     fileSuffix: null
+#     fileNames: []
+#     dirPrefix: null
+#     dirSuffix: null
+#     dirNames: []
+#   compileOption: {}
+#   beautify: false
+#   beautifyOption: {}
+#   style: null
+#   generateIndex: false
+#   indexFileName: _all.scss
+#   indexImportType: forward
+#   sourcemap: null
+#   loadPaths:
+#     - "{{ srcDir | default('src') }}"
+#     - node_modules
+## ---------------
+## javaScriptビルド機能の設定
+## ---------------
+# js:
+#   srcDir: "{{ srcDir | default('src') }}"
+#   outputDir: "{{ outputDir | default('public') }}/{{ assetDir + '/' if assetDir else '' }}js"
+#   exts:
+#     - js
+#     - ts
+#   moduleExts:
+#     - mjs
+#     - mts
+#     - cjs
+#     - cts
+#   ignore:
+#     filePrefix: null
+#     fileSuffix: ".d"
+#     fileNames: []
+#     dirPrefix: null
+#     dirSuffix: null
+#     dirNames:
+#       - node_modules
+#   compileOption: {}
+#   ## @see https://github.com/rollup/plugins/tree/master/packages/replace
+#   replace:
+#     'process.env.NODE_ENV': '"production"'
+#   beautify: false
+#   beautifyOption: {}
+#   format: esm
+#   globals: {}
+#   sourcemap: false
+#   minify: false
+#   minifyOption: {}
+## ---------------
+## コピー機能の設定
+## ---------------
+# copy: []
+#   ## -----------------
+#   ## Example Setting
+#   ## -----------------
+#   # - src: node_modules/@fortawesome/fontawesome-free/webfonts/*.{ttf,woff,woff2}
+#   #   dest: public/assets/webfont
+## ---------------
+## スニペットのビルド設定
+## ---------------
+# snippet:
+#   srcDir: docs/cheatsheet
+#   outputDir: .vscode
+#   exts:
+#     - md
+#   snippetHeaderLevel: 2
+#   extraSettingHeaderLevel: 3
+#   extraSettingHeaderTexts:
+#     - Snippet Setting
+#     - Snippet Settings
+#     - VSCode Extra Setting
+#     - VSCode Extra Settings
+#     - VSCode Snippet Setting
+#     - VSCode Snippet Settings
+## ---------------
+## スクリーンショットの設定
+## ---------------
+# screenshot:
+#   ## スクリーンショットの保存先ディレクトリ
+#   outputDir: screenshots
+#   ## ディレクトリを作成せずにフラットにスクリーンショットを保存する
+#   saveFlatPath: false
+#   ## デフォルトのブラウザ設定
+#   default:
+#     type: chromium
+#     width: 1920
+#     height: 1080
+#   ## ヘッドレスモードで実行するか否か
+#   headless: true
+#   ## ページ全体のスクリーンショットを取得するか否か
+#   fullPage: true
+#   ## 最大再試行回数
+#   retryLimit: 3
+#   ## ----------------
+#   ## サイトマップファイルを直接指定する場合は「sitemapLocation」の項目を設定する
+#   ## ----------------
+#   # sitemapLocation: ./pages.json
+#   ## ----------------
+#   ## 複数環境のスクリーンショットを取る場合は「targets」の項目を設定する
+#   ##
+#   ## 「type」に指定可能な値は、chromium / firefox / webkitのいずれか
+#   ## または、以下に定義されているデバイス名
+#   ## https://github.com/microsoft/playwright/blob/main/packages/playwright-core/types/types.d.ts
+#   ##
+#   ## ※デバイス名が指定ている場合は指定されたデバイス名に合わせてエンジンと画面(viewport)サイズが自動設定されます。
+#   ## サイズ(width / height)が指定されている場合は画面(viewport)サイズを上書きして設定します。
+#   ## ----------------
+#   # targets:
+#   #   desktop:
+#   #     type: Desktop Chrome
+#   #     width: 1920
+#   #     height: 1080
+#   #   tablet:
+#   #     type: iPad Mini
+#   #   tablet_landscape:
+#   #     type: iPad Mini landscape
+#   #   mobile:
+#   #     type: iPhone 14 Pro
+#   #   mobile_landscape:
+#   #     type: iPhone 14 Pro landscape
+#   # ## 認証設定(experimental)
+#   # auth:
+#   #   ## Basic認証設定
+#   #   basic:
+#   #     username: null
+#   #     password: null
+#   #   ## フォーム(ログイン画面)認証設定
+#   #   form:
+#   #     ### -----------
+#   #     ### Example
+#   #     ### -----------
+#   #     ## 認証フォームのURL
+#   #     url: http://example.com/
+#   #     ## 認証フォームの操作
+#   #     actions:
+#   #       ## ユーザー名(テキストフィールド)を入力
+#   #       - selector: "#username"
+#   #         action: fill
+#   #         value: admin
+#   #       ## パスワード(パスワードフィールド)を入力
+#   #       - selector: "#password"
+#   #         action: fill
+#   #         value: password
+#   #       ## ログイン先(コンボボックス)を選択
+#   #       - selector: "#choice"
+#   #         action: select
+#   #         value: admin
+#   #       ## ログイン情報を記憶する(チェックボックス)にチェックを入れる
+#   #       - selector: "#remember_me"
+#   #         action: check
+#   #       ## ログインボタンをクリックする
+#   #       - selector: "#submit"
+#   #         action: click
