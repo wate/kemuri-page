@@ -17,12 +17,8 @@ async function errorHandling(context) {
 }
 
 async function handleRequest(context) {
-  const BASIC_USER = "admin";
-  const BASIC_PASS = "password";
-
-  console.log(context);
-
-  console.log(context.env);
+  const BASIC_USER = context.env.AUTH_BASIC_USER || 'login';
+  const BASIC_PASS = context.env.AUTH_BASIC_PASSWORD || 'password';
 
   // The "Authorization" header is sent when authenticated.
   if (context.request.headers.has("Authorization")) {
@@ -59,11 +55,7 @@ async function handleRequest(context) {
     const user = decoded.substring(0, index);
     const pass = decoded.substring(index + 1);
 
-    if (BASIC_USER !== user) {
-      return new Response("Invalid credentials.", { status: 401 });
-    }
-
-    if (BASIC_PASS !== pass) {
+    if (BASIC_USER !== user || BASIC_PASS !== pass) {
       return new Response("Invalid credentials.", { status: 401 });
     }
 
