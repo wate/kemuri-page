@@ -8,14 +8,127 @@ enable:
   - html
   - copy
 ## ---------------
+## 共通設定項目
+## ---------------
+# srcDir: src
+# outputDir: public
+# assetDir: assets
+# ignore:
+#   filePrefix: null
+#   fileSuffix: null
+#   fileNames: []
+#   dirPrefix: null
+#   dirSuffix: null
+#   dirNames: []
+## ---------------
 ## HTMLビルド機能の設定
 ## ---------------
 html:
+  # srcDir: "{{ srcDir | default('src') }}"
+  # outputDir: "{{ outputDir | default('public') }}"
+  # exts:
+  #   - njk
+  #   - twig
   ignore:
+    # filePrefix: null
+    # fileSuffix: null
+    # fileNames: []
+    # dirPrefix: null
+    # dirSuffix: null
     dirNames:
       - element
       - layout
+  # varFileName: vars.yml
   siteUrl: https://tool-s.xyz/
+  # generateSiteMap: true
+  # sitemapTemplate: |
+  #   <?xml version="1.0" encoding="UTF-8"?>
+  #   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  #     {% for page in pages %}
+  #     <url>
+  #       <loc>{{ page.url }}</loc>
+  #       <lastmod>{{ page_lastmod | default(page.lastmod) }}</lastmod>
+  #       {% if page_changefreq is defined %}
+  #       <changefreq>{{ page_changefreq }}</changefreq>
+  #       {% endif %}
+  #       {% if page_priority is defined %}
+  #       <priority>{{ page_priority }}</priority>
+  #       {% endif %}
+  #     </url>
+  #     {% endfor %}
+  #   </urlset>
+  # generatePageList: true
+## ---------------
+## CSSビルド機能の設定
+## ---------------
+# css:
+#   srcDir: "{{ srcDir | default('src') }}"
+#   outputDir: "{{ outputDir | default('public') }}/{{ assetDir + '/' if assetDir else '' }}css"
+#   exts:
+#     - scss
+#     - sass
+#     - css
+#   moduleExts: []
+#   ignore:
+#     filePrefix: _
+#     fileSuffix: null
+#     fileNames: []
+#     dirPrefix: null
+#     dirSuffix: null
+#     dirNames: []
+#   compileOption: {}
+#   beautify: false
+#   beautifyOption: {}
+#   style: null
+#   generateIndex: false
+#   indexFileName: _all.scss
+#   indexImportType: forward
+#   sourcemap: null
+#   loadPaths:
+#     - "{{ srcDir | default('src') }}"
+#     - node_modules
+## ---------------
+## javaScriptビルド機能の設定
+## ---------------
+# js:
+#   srcDir: "{{ srcDir | default('src') }}"
+#   outputDir: "{{ outputDir | default('public') }}/{{ assetDir + '/' if assetDir else '' }}js"
+#   exts:
+#     - js
+#     - ts
+#   moduleExts:
+#     - mjs
+#     - mts
+#     - cjs
+#     - cts
+#   ignore:
+#     filePrefix: null
+#     fileSuffix: ".d"
+#     fileNames: []
+#     dirPrefix: null
+#     dirSuffix: null
+#     dirNames:
+#       - node_modules
+#   compileOption: {}
+#   ## @see https://github.com/rollup/plugins/tree/master/packages/replace
+#   replace:
+#     'process.env.NODE_ENV': '"production"'
+#   beautify: false
+#   beautifyOption: {}
+#   format: esm
+#   globals: {}
+#   sourcemap: false
+#   minify: false
+#   minifyOption: {}
+## ---------------
+## コピー機能の設定
+## ---------------
+# copy: []
+#   ## -----------------
+#   ## Example Setting
+#   ## -----------------
+#   # - src: node_modules/@fortawesome/fontawesome-free/webfonts/*.{ttf,woff,woff2}
+#   #   dest: public/assets/webfont
 ## ---------------
 ## スクリーンショットの設定
 ## ---------------
