@@ -14,7 +14,7 @@ const errorHandling: PagesFunction = async (context) => {
     return new Response(`${err.message}\n${err.stack}`, { status: 500 });
   }
 }
-const handleRequest = async (context) => {
+const handleRequest: PagesFunction = async (context) => {
   const { request, env } = context;
   if (
     env.AUTH_BASIC_USER == undefined ||
