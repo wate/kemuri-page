@@ -7,22 +7,28 @@
  * first colon in a user-pass string separates user and password.
  */
 
-
-async function errorHandling(context) {
+const errorHandling: PagesFunction = async (context) => {
   try {
     return await context.next();
   } catch (err) {
     return new Response(`${err.message}\n${err.stack}`, { status: 500 });
   }
 }
+const handleRequest = async (context) => {
+  const { request, env } = context;
+  if (
+    env.AUTH_BASIC_USER == undefined ||
+    env.AUTH_BASIC_PASSWORD == undefined
+  ) {
+    return await context.next();
+  }
 
-async function handleRequest(context) {
-  const BASIC_USER = context.env.AUTH_BASIC_USER || 'login';
-  const BASIC_PASS = context.env.AUTH_BASIC_PASSWORD || 'password';
+  const BASIC_USER = env.AUTH_BASIC_USER;
+  const BASIC_PASS = env.AUTH_BASIC_PASSWORD;
 
   // The "Authorization" header is sent when authenticated.
-  if (context.request.headers.has("Authorization")) {
-    const Authorization = context.request.headers.get("Authorization");
+  if (request.headers.has("Authorization")) {
+    const Authorization = request.headers.get("Authorization");
     // Throws exception when authorization fails.
 
     const [scheme, encoded] = Authorization.split(" ");

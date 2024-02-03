@@ -12,7 +12,10 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "kemuri": "github:wate/kemuri#develop"
+    "@cloudflare/workers-types": "^4.20240129.0",
+    "kemuri": "github:wate/kemuri#develop",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.26.0"
   },
   "dependencies": {
     "@fullcalendar/bootstrap": "^6.1.10",
