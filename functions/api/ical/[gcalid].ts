@@ -1,12 +1,10 @@
 const iCalContent: PagesFunction = async (context) => {
   try {
-    const calenderID = context.params.gcalid;
-    if (!calenderID) {
-      return new Response("No Calender ID provided", { status: 400 });
-    }
-    const icalURL = new URL(`https://calendar.google.com/calendar/ical/${calenderID}/public/basic.ics`);
+    const icalURL = new URL(`https://calendar.google.com/calendar/ical/${context.params.gcalid}/public/basic.ics`);
     const iCalData = await fetch(icalURL);
-    console.log(iCalData);
+    if (!iCalData.ok) {
+      return new Response("Failed to fetch iCal data", { status: 500 });
+    }
     return new Response(iCalData.body, {
       status: 200,
       headers: {
