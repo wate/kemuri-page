@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
       themeSystem: 'bootstrap',
       nowIndicator: true,
       events: {
-        url: '/api/ical/ja.japanese%23holiday%40group.v.calendar.google.com',
+        url: '/ical/ja.japanese%23holiday%40group.v.calendar.google.com',
         format: 'ics',
       },
     });
