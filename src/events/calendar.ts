@@ -42,8 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
       themeSystem: 'bootstrap',
       nowIndicator: true,
       events: {
-        // CORS対策でGoogleカレンダーのURLを直接指定できないため、サーバーサイドで取得して返す必要あり
-        url: 'https://calendar.google.com/calendar/ical/ja.japanese%23holiday%40group.v.calendar.google.com/public/basic.ics',
+        url: '/api/ical/ja.japanese%23holiday%40group.v.calendar.google.com',
         format: 'ics',
       },
     });
