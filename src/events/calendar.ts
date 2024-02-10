@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eventSources: [
         {
           url: '/ical/ja.japanese%23holiday%40group.v.calendar.google.com',
-          color: 'yellow',
+          color: 'orange',
           format: 'ics',
         }
       ],
