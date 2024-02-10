@@ -41,10 +41,13 @@ document.addEventListener('DOMContentLoaded', function () {
       contentHeight: 'auto',
       themeSystem: 'bootstrap',
       nowIndicator: true,
-      events: {
-        url: '/ical/ja.japanese%23holiday%40group.v.calendar.google.com',
-        format: 'ics',
-      },
+      eventSources: [
+        {
+          url: '/ical/ja.japanese%23holiday%40group.v.calendar.google.com',
+          color: 'yellow',
+          format: 'ics',
+        }
+      ],
     });
     calendar.render();
   } else {

@@ -1,0 +1,31 @@
+---
+title: 地図
+feature_name: 地図
+---
+{% extends "layout/default.twig" %}
+{% block content_header %}
+<div class="col">
+  <h1 class="m-0">{{ feature_name }}</h1>
+</div>
+<!-- /content-header -->
+{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-12" id="map">
+    ここに地図が表示される
+  </div>
+</div>
+{% endblock %}
+{% block css_head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<style>
+#map{
+  height: 780px;
+}
+</style>
+
+{% endblock %}
+{% block script_bottom %}
+<script src='/assets/js/{{ _scope }}/map.js'></script>
+{% endblock %}
+
