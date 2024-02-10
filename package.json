@@ -13,6 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240129.0",
+    "@types/leaflet": "^1.9.8",
     "kemuri": "github:wate/kemuri#develop",
     "typescript": "^5.3.3",
     "wrangler": "^3.26.0"
@@ -26,6 +27,7 @@
     "@fullcalendar/list": "^6.1.10",
     "@fullcalendar/multimonth": "^6.1.10",
     "@fullcalendar/timegrid": "^6.1.10",
-    "ical.js": "^1.5.0"
+    "ical.js": "^1.5.0",
+    "leaflet": "^1.9.4"
   }
 }
