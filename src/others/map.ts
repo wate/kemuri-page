@@ -66,4 +66,5 @@ const route = [
   [34.82594, 134.70240],
   [34.82589, 134.70240],
 ];
+// @ts-ignore
 L.polyline(route, { color: 'red' }).addTo(map);
