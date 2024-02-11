@@ -1,7 +1,16 @@
 import L from 'leaflet';
 
+/**
+ * Japan/OSMFJ Tileserver
+ * @see https://wiki.openstreetmap.org/wiki/Japan/OSMFJ_Tileserver
+ */
+const tilesSrverDefault = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+const tilesSrverBright = 'https://tile.openstreetmap.jp/styles/osm-bright-ja/{z}/{x}/{y}.png';
+const tilesSrverMaptilerBasic = 'https://tile.openstreetmap.jp/styles/maptiler-basic-ja/{z}/{x}/{y}.png';
+const tilesSrverMaptilerToner = 'https://tile.openstreetmap.jp/styles/maptiler-toner-ja/{z}/{x}/{y}.png';
+
 const map = L.map('map').setView([34.82704, 134.68996], 17);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer(tilesSrverBright, {
   maxZoom: 18,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
@@ -10,6 +19,11 @@ L.marker([34.82689, 134.69024]).addTo(map)
   .bindPopup('姫路駅');
 L.marker([34.82580, 134.70233]).addTo(map)
   .bindPopup('勉強会会場(獨協学園はり姫サテライト)').openPopup();
+
+/**
+ * Route
+ * @see https://geojson.io/#map=17/34.826804/134.691355
+ */
 const route = [
   [34.82723, 134.69019],
   [34.82727, 134.69024],
