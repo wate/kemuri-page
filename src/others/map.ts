@@ -10,7 +10,7 @@ const tilesSrverMaptilerBasic = 'https://tile.openstreetmap.jp/styles/maptiler-b
 const tilesSrverMaptilerToner = 'https://tile.openstreetmap.jp/styles/maptiler-toner-ja/{z}/{x}/{y}.png';
 
 const map = L.map('map').setView([34.82704, 134.68996], 17);
-L.tileLayer(tilesSrverBright, {
+L.tileLayer(tilesSrverDefault, {
   maxZoom: 18,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
