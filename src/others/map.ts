@@ -1,10 +1,12 @@
 import L from 'leaflet';
 
+const tilesSrverDefault = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 /**
  * Japan/OSMFJ Tileserver
  * @see https://wiki.openstreetmap.org/wiki/Japan/OSMFJ_Tileserver
  */
-const tilesSrverDefault = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+const tilesSrverUsually = 'https://tile.openstreetmap.jp/{z}/{x}/{y}.png';
+const tilesSrverUsuallyLoadDistribution = 'https://{s}.tile.openstreetmap.jp/{z}/{x}/{y}.png';
 const tilesSrverBright = 'https://tile.openstreetmap.jp/styles/osm-bright-ja/{z}/{x}/{y}.png';
 const tilesSrverMaptilerBasic = 'https://tile.openstreetmap.jp/styles/maptiler-basic-ja/{z}/{x}/{y}.png';
 const tilesSrverMaptilerToner = 'https://tile.openstreetmap.jp/styles/maptiler-toner-ja/{z}/{x}/{y}.png';
