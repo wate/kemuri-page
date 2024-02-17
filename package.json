@@ -27,6 +27,7 @@
     "@fullcalendar/list": "^6.1.10",
     "@fullcalendar/multimonth": "^6.1.10",
     "@fullcalendar/timegrid": "^6.1.10",
+    "@toast-ui/chart": "^4.6.1",
     "ical.js": "^1.5.0",
     "leaflet": "^1.9.4"
   }

@@ -29,6 +29,9 @@ dependencies:
   '@fullcalendar/timegrid':
     specifier: ^6.1.10
     version: 6.1.10(@fullcalendar/core@6.1.10)
+  '@toast-ui/chart':
+    specifier: ^4.6.1
+    version: 4.6.1
   ical.js:
     specifier: ^1.5.0
     version: 1.5.0
@@ -708,6 +711,10 @@ packages:
   /@socket.io/component-emitter@3.1.0:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: true
+
+  /@toast-ui/chart@4.6.1:
+    resolution: {integrity: sha512-F35IkHS0U9zqN6xIV1Yj3/wh8KGlZyzT3bwVGBJh/82DMDMn8rD2Us8X7xBMBGcZ3E15qkfnKjrATxU5ZoGAnA==}
+    dev: false
 
   /@types/cookie@0.4.1:
     resolution: {integrity: sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==}
