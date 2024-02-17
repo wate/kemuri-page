@@ -1,0 +1,21 @@
+---
+title: キャリアアンカー
+feature_name: キャリアアンカー
+---
+{% extends "layout/default.twig" %}
+{% block css_head %}
+<link rel="stylesheet" href="https://uicdn.toast.com/chart/latest/toastui-chart.min.css" />
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-12">
+    <div id="chart"></div>
+  </div>
+</div>
+{% endblock %}
+{% block script_bottom %}
+<script src="https://uicdn.toast.com/chart/latest/toastui-chart.min.js"></script>
+<script src="{{ asset.js_root }}{{ _file.path }}.js"></script>
+{% endblock %}
+
